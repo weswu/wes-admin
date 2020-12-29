@@ -4,7 +4,7 @@ const commonApi = 'xxx';
 const svgoConfig = require('./config/svgo-config.json');
 
 module.exports = {
-  publicPath: '', //相对路径
+  publicPath: '/', //相对路径
   outputDir: 'docs',
   devServer: {
     proxy: {

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/views/auth/TheLogin.vue';
 import Layout from '@/views/layouts/AppLayout.vue';
+import Blog from '@/views/blog/App.vue';
 import LayoutWithoutSidebar from '@/views/layouts/AppLayoutWithoutSidebar.vue';
 
 import components from './modules/components';
@@ -37,10 +38,25 @@ export default new Router({
     },
     {
       path: '/',
-      redirect: { name: 'Dashboard' },
+      redirect: '/blog/index',
       meta: {
         hidden: true,
       },
+    },
+    {
+      path: '/blog',
+      component: Blog,
+      redirect: '/blog/index',
+      children: [
+        {
+          path: 'index',
+          component: () => import('@/views/blog/Index.vue'),
+        },
+        {
+          path: 'me',
+          component: () => import('@/views/blog/Me.vue'),
+        },
+      ],
     },
     {
       path: '/index',
