@@ -1,36 +1,55 @@
 <template>
-  <div>
-    <v-tabs class="hidden-sm-and-down" optional>
-      <v-tab
-        v-for="(item, i) in items"
-        :key="i"
-        :to="item.value"
-        :exact="item.label === '文章'"
-        :ripple="false"
-        active-class="text--primary"
-        class="font-weight-bold"
-        min-width="96"
-        text
-      >
-        {{ item.label }}
-      </v-tab>
-    </v-tabs>
-
+  <div id="header">
+    <div style="height:60px;"></div>
+    <header>
+      <div class="container header">
+        <a class="header-logo" href="./">
+          <img style="width: 38px; height: 38px" src="/img/logo.png"></img>
+        </a>
+        <div :class="'header-menu' + ($store.state.open ? ' --open' : '')">
+          <v-tabs align-with-title>
+            <v-tab v-for="item in list" :key="item.path">{{item.name}}</v-tab>
+          </v-tabs>
+        </div>
+        <div @click="open" :class="'header-toggle' + ($store.state.open ? ' --open' : '')">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'HomeAppBar',
-    data: () => ({
-      drawer: null,
-      items: [
-        {label: '文章', value: 'index'},
-        {label: '我', value: 'me'}
-      ],
-    }),
-  }
+import { mapState } from 'vuex'
+export default {
+  data:() => ({
+    list: [
+      { path: '/index', name: '文章' },
+      { path: '/me', name: '我' },
+    ],
+    fixed: false
+  }),
+  computed: {
+    active() {
+      let defaultActive = this.$route.path
+      let type = this.$route.query.type
+      if (type) defaultActive = '/' + type
+      return defaultActive
+    }
+  },
+  methods: {
+    open() {
+      this.$store.commit('setOpen', !this.$store.state.open)
+    },
+    closeOpen(){
+      this.$store.commit('setOpen', false)
+    }
+  },
+}
 </script>
 
-<style lang="css" scoped>
+<style lang="scss">
+
 </style>

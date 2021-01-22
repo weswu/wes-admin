@@ -3,6 +3,7 @@
     <Header/>
     <router-view/>
     <Footer/>
+    <div :class="'header__overlay' + ($store.state.open ? ' --open' : '')" @click="open"></div>
   </div>
 </template>
 
@@ -14,6 +15,11 @@
     components: {
       Header, Footer
     },
+    methods: {
+      open() {
+        this.$store.commit('setOpen', false)
+      }
+    }
   }
 </script>
 

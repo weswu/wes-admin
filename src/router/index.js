@@ -50,11 +50,11 @@ export default new Router({
       children: [
         {
           path: 'index',
-          component: () => import('@/views/blog/Index.vue'),
+          component: () => import('@/views/blog/layout/index.vue'),
         },
         {
           path: 'me',
-          component: () => import('@/views/blog/Me.vue'),
+          component: () => import('@/views/blog/layout/me.vue'),
         },
       ],
     },

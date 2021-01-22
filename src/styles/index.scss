@@ -3,3 +3,197 @@
 @import './sidebar.scss';
 @import './nav-container.scss';
 @import './main-container.scss';
+
+
+// 全局变量
+@import './blog/variables.scss';
+// 通用配置
+@import './blog/normalize.scss';
+// 组件
+@import './blog/components.scss';
+// 响应式
+@import './blog/media.scss';
+
+/*
+  红： #e80b1c
+  红深：#d51d29
+  金： #fbda8b
+  白： #fff
+  黑： #333
+*/
+
+
+.el-image{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  .el-icon-picture-outline{
+    font-size: 20px;
+    color: #999;
+  }
+}
+
+.color-primary{
+  color: $--color-primary;
+  font-family: '黑体';
+}
+
+.bg{
+  background: $light-bg-color;
+}
+
+.d-icon-dang{
+  width: 16px;
+  padding-right: 8px;
+  vertical-align: text-bottom;
+}
+
+.el-icon-circle-close{
+  color: #fff;
+}
+/*  -------------------------------  标题  ---------------------------------  */
+
+.d-title{
+   position: relative;
+   text-align: center;
+   margin: 40px 0;
+   &:after{
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      top: 46%;
+      background: $border;
+   }
+  .text {
+      font-size: 1.6rem;
+      display: inline-block;
+      padding: 0 30px;
+      line-height: 1;
+      background: #fff;
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      color: #e80b1c;
+      font-family: '黑体';
+  }
+}
+
+
+/*  -------------------------------  内容  ---------------------------------  */
+
+.site__content {
+  flex: 1;
+  min-height: 20rem;
+  .post-content {
+    margin: 0 auto;
+    padding: 2.5em 0;
+  }
+}
+
+/*  -------------------------------  党建动态 / 特色工作 ---------------------------------  */
+
+.d-news{
+  section ul{
+    position: relative;
+    display: flex;
+    flex-flow: wrap;
+    padding-top: 20px;
+    li{
+      width: calc((100% - 30px)/4);
+      margin-right: 10px;
+      margin-bottom: 10px;
+      background-color: #ffffff;
+      transition: all .3s ease;
+      border-radius: 4px;
+      &:nth-child(4n) {
+        margin-right: 0
+      }
+      &:hover{
+        box-shadow: 0 4px 6px 0px rgba(0,0,0,.1);
+        transform: translateY(-4px);
+      }
+      a{
+        display: block;
+        height: 100%;
+        background-color: #ffffff;
+      }
+      .pic{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-top: 70%;
+        overflow: hidden;
+      }
+      .box{
+        padding: 10px 15px;
+        .title{
+          font-size: 14px;
+        }
+        .time{
+          font-size: 12px;
+          color: #999;
+        }
+        .content{
+          border-top: 1px solid $border;
+          margin: 5px 0 2px 0;
+          padding-top: 8px;
+          font-size: 12px;
+          color: #666;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+
+    @media (max-width: $md) {
+      li{
+        width: calc((100% - 10px)/2);
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background-color: #ffffff;
+        transition: all .3s ease;
+        border-radius: 4px;
+        &:nth-child(2n) {
+          margin-right: 0
+        }
+      }
+    }
+  }
+}
+
+
+/*  -------------------------------  党组织概况 / 党务公开栏 ---------------------------------  */
+
+.d-contact{
+  margin: 50px 0;
+  .d-title{
+    margin-top: 80px;
+  }
+  .photo-list{
+    display: flex;flex-flow: wrap;
+    .text{
+      text-align: center;
+    }
+  }
+  .el-image{
+    width: 279px;
+    height: 279px;
+    padding: 5px;
+    border: 1px solid #eee;
+    margin: 10px 10px 20px 10px;
+    img{
+      width: auto;
+      height: auto;
+    }
+  }
+  a{
+    text-decoration: underline;
+  }
+}
