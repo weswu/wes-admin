@@ -2,7 +2,7 @@
   <div class="panel-wrapper">
     <span class="logo">
       <img
-        src="../../assets/logo.png"
+        src="/image/logo.png"
         alt=""
       >
     </span>
@@ -10,7 +10,7 @@
     <div class="slogan-wrapper">
       <div class="slogan">
         <img
-          src="../../assets/login-bg2.svg"
+          src="/login-bg2.svg"
           alt=""
         >
       </div>

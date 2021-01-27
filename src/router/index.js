@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/views/auth/TheLogin.vue';
 import Layout from '@/views/layouts/AppLayout.vue';
-import Blog from '@/views/blog/App.vue';
 import LayoutWithoutSidebar from '@/views/layouts/AppLayoutWithoutSidebar.vue';
 
 import components from './modules/components';
@@ -11,6 +10,7 @@ import uiComponents from './modules/ui-components';
 import tables from './modules/tables';
 import charts from './modules/charts';
 import excel from './modules/excel';
+import blog from './modules/blog';
 
 Vue.use(Router);
 
@@ -43,21 +43,7 @@ export default new Router({
         hidden: true,
       },
     },
-    {
-      path: '/blog',
-      component: Blog,
-      redirect: '/blog/index',
-      children: [
-        {
-          path: 'index',
-          component: () => import('@/views/blog/layout/index.vue'),
-        },
-        {
-          path: 'me',
-          component: () => import('@/views/blog/layout/me.vue'),
-        },
-      ],
-    },
+    blog,
     {
       path: '/index',
       name: 'Index',

@@ -1,5 +1,5 @@
-$primary: #e80b1c !default;
-$secondary: #c40000 !default;
+$primary-color: #00a672 !default;
+$secondary-color: #c40000 !default;
 $border: #ededed !default;
 $primary-light: #eb3e4b;
 $reverse: #3c3d41 !default;
@@ -10,7 +10,7 @@ $bg-color: #fff !default;
 $light-bg-color: #f9f9f9;
 $text-color: #343851;
 $heading-color: #313237;
-$link-color: $primary;
+$link-color: $primary-color;
 $button-dark: #222325;
 $dark-light: #313237;
 $outline: #dbdbdb;

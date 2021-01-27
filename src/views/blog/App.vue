@@ -1,5 +1,5 @@
 <template>
-  <div id="Blog">
+  <div id="blog">
     <Header/>
     <router-view/>
     <Footer/>

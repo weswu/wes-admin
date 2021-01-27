@@ -17,7 +17,7 @@
         border-bottom: 1px solid #fff;
         &.el-col-4{
           color: #fff;
-          background: $primary;
+          background: $primary-color;
         }
       }
     }
@@ -113,7 +113,7 @@ header{
   position: fixed;
   z-index: 999;
   width: 100%;
-  top: 0;
+  top: 4px;
   left: 0;
   will-change: transform;
   transition: transform .3s, background-color 0.5s ease;
