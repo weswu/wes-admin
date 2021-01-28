@@ -12,7 +12,7 @@ import * as consts from './utils/consts';
 import './utils/compatible-ie';
 import i18n from './i18n';
 import Mock from './mock';
-import './plugins/vuetify';
+import vuetify from './plugins/vuetify'
 import './plugins/echarts';
 import './components/svg-icons';
 import { parseURL } from './utils/util';
@@ -43,6 +43,7 @@ Vue.store = store;
 Vue.prototype.$api = API;
 Vue.prototype.$consts = consts;
 Vue.prototype.$moment = moment;
+Vue.prototype.$vuetify = vuetify;
 
 Vue.filter('formatDate', (v, isUTC = true, dateFormat = 'YYYY-MM-DD HH:mm:ss') => {
   if (v) {
@@ -98,6 +99,18 @@ Vue.router.afterEach(() => {
   NProgress.done();
 });
 
+const that = Vue.prototype;
+console.log(that)
+that.$locale = {
+  use(lang) {
+    i18n.locale = lang;
+    that.$vuetify.framework.lang.current = lang === 'zh-CN' ? 'zhLang' : 'enLang';
+    localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
+  },
+  current() {
+    return i18n.locale;
+  },
+};
 i18n.locale = localStorage.getItem('VUE-ADMIN-VUETIFY_LANGUAGE')
   || (supportedLangs.includes(userLocale) ? userLocale : 'zh-CN');
 Vue.prototype.$locale.use(i18n.locale);
@@ -108,5 +121,6 @@ new Vue({
   router,
   store,
   i18n,
+  vuetify,
   render: h => h(App),
 }).$mount('#app');

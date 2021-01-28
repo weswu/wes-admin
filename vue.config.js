@@ -44,6 +44,7 @@ module.exports = {
   transpileDependencies: [
     /\/node_modules\/vue-echarts\//,
     /\/node_modules\/resize-detector\//,
+    "vuetify"
   ],
   chainWebpack: config => {
     // 修改 `svg` Loader

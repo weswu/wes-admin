@@ -3,3 +3,10 @@ $sidebar-width: 200px;
 :root{
   --primary-color: #00a672;
 }
+.v-list {
+  &__tile {
+    &__avatar {
+      min-width: 46px;
+    }
+  }
+}

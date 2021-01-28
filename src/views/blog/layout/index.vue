@@ -43,7 +43,6 @@
     },
     methods: {
       get() {
-        this.searchData.partyId = this.$route.query.partyId || this.party.id
         this.$http.get('/nfnet/newsbase/page', {params: this.searchData}).then(res => {
           this.list = res.data.records
           this.list.forEach((item, i) => {

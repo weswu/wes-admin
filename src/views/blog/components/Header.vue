@@ -9,7 +9,7 @@
       height="60"
     >
 
-      <base-img
+      <v-img
         src="/image/svg/wes-logo-light.svg"
         contain
         max-width="90"
@@ -21,17 +21,17 @@
       <div>
         <v-tabs class="hidden-sm-and-down" optional>
           <v-tab
-            v-for="(name, i) in list"
+            v-for="(item, i) in list"
             :key="i"
-            :to="{ name }"
-            :exact="name === 'Home'"
+            :to="item.path"
+            :exact="item.path === 'Home'"
             :ripple="false"
             active-class="text--primary"
             class="font-weight-bold"
             min-width="96"
             text
           >
-            {{ name }}
+            {{ item.name }}
           </v-tab>
         </v-tabs>
       </div>
@@ -40,7 +40,7 @@
     </v-app-bar>
 
     <Drawer v-model="drawer" :items="list"/>
-  </div>  
+  </div>
 </template>
 
 <script>
