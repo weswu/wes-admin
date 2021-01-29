@@ -3,14 +3,14 @@
     <div class="header-bar"></div>
     <v-app-bar
       id="home-app-bar"
-      app
+      app style="top:2px"
       color="white"
       elevation="1"
       height="60"
     >
 
-      <v-img
-        src="/image/svg/wes-logo-light.svg"
+      <base-img
+        :src="require('@/assets/svg/wes-logo-light.svg')"
         contain
         max-width="90"
         width="100%"
@@ -52,25 +52,32 @@ export default {
   data:() => ({
     drawer: null,
     list: [
-      { path: '/index', name: 'Home' },
-      { path: '/about', name: 'About' },
-    ],
-    fixed: false
+      { path: '/blog/index', name: 'Home' },
+      { path: '/blog/about', name: 'About' },
+    ]
   }),
-  methods: {
-    open() {
-      this.$store.commit('setOpen', !this.$store.state.open)
-    },
-    closeOpen(){
-      this.$store.commit('setOpen', false)
-    }
-  },
 }
 </script>
 
 <style lang="scss">
 .header-bar{
   background: linear-gradient( 90deg ,var(--primary-color),#8ed6fb 50%,#d32e9d);
-  height: 4px;
+  height: 2px;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
+  #home-app-bar{
+    .v-tabs-slider{
+      max-width: 24px;
+      margin: 0 auto;
+    }
+    .v-tab{
+      &::before{
+        display: none;
+      }
+    }
+  }
+
+
 </style>

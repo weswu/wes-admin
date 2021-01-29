@@ -10,18 +10,16 @@ import zhLang from 'vuetify/es5/locale/zh-Hans';
 import i18n from '../i18n';
 import Snackbar from '../components/snackbar/index';
 
-Vue.use(Vuetify, {
+Vue.prototype.$message = Snackbar;
+
+Vue.use(Vuetify)
+
+export default new Vuetify({
   directives,
   lang: {
     locales: { enLang, zhLang },
     current: 'enLang',
   },
-});
-
-Vue.prototype.$message = Snackbar;
-
-
-export default new Vuetify({
   theme: {
     dark: false,
     themes: {

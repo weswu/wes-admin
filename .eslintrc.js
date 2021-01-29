@@ -1,18 +1,20 @@
 module.exports = {
-  "root": true,
-  "env": {
-    "node": true
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+    es6: true
   },
-  "extends": [
+  extends: [
     "plugin:vue/essential",
     "@vue/airbnb"
   ],
-  "rules": {
+  rules: {
     "no-console": 0,
     "no-debugger": "off",
     "no-shadow": 0,
     "operator-linebreak": [2, "before"],
-    "linebreak-style": [0 ,"error", "windows"], 
+    "linebreak-style": [0 ,"error", "windows"],
     "max-len": [
       "error",
       {
@@ -37,7 +39,8 @@ module.exports = {
     'import/no-extraneous-dependencies': true,
     "no-mixed-operators": 0,
   },
-  "parserOptions": {
-    "parser": "babel-eslint"
+  parserOptions: {
+    parser: 'babel-eslint',
+    sourceType: 'module'
   }
 }

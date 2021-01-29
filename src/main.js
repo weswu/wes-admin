@@ -17,6 +17,7 @@ import './plugins/echarts';
 import './components/svg-icons';
 import { parseURL } from './utils/util';
 import VBasicCard from './components/VBasicCard.vue';
+import './plugins'
 
 Vue.component('v-basic-card', VBasicCard);
 
@@ -43,7 +44,6 @@ Vue.store = store;
 Vue.prototype.$api = API;
 Vue.prototype.$consts = consts;
 Vue.prototype.$moment = moment;
-Vue.prototype.$vuetify = vuetify;
 
 Vue.filter('formatDate', (v, isUTC = true, dateFormat = 'YYYY-MM-DD HH:mm:ss') => {
   if (v) {
@@ -99,12 +99,12 @@ Vue.router.afterEach(() => {
   NProgress.done();
 });
 
+
 const that = Vue.prototype;
-console.log(that)
 that.$locale = {
   use(lang) {
     i18n.locale = lang;
-    that.$vuetify.framework.lang.current = lang === 'zh-CN' ? 'zhLang' : 'enLang';
+    vuetify.framework.lang.current = lang === 'zh-CN' ? 'zhLang' : 'enLang';
     localStorage.setItem('VUE-ADMIN-VUETIFY_LANGUAGE', lang);
   },
   current() {

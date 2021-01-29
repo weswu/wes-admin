@@ -1,10 +1,10 @@
 <template>
-  <div id="blog">
+  <v-app id="blog">
     <Header/>
     <router-view/>
     <Footer/>
     <div :class="'header__overlay' + ($store.state.open ? ' --open' : '')" @click="open"></div>
-  </div>
+  </v-app>
 </template>
 
 <script>

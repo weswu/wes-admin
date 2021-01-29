@@ -9,19 +9,24 @@
           </ul>
         </section>
       </main>
-      <JPagination :total="total" :searchData="searchData" @on-change="get"/>
+      <div class="text-center">
+        <v-pagination
+          v-model="searchData.current"
+          :length="4"
+          circle
+        ></v-pagination>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex'
-  import JPagination from '@/views/blog/components/group/j-pagination'
   import Item from './item'
 
   export default {
     components: {
-      JPagination, Item
+      Item
     },
     data: () => ({
       total: '',
