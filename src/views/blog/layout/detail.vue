@@ -1,5 +1,5 @@
 <template>
-  <div class="news-detail bg">
+  <div class="news-detail">
     <div class="container">
       <main class="site__content">
         <div class="content">
@@ -8,9 +8,6 @@
           </h3>
           <div class="" style="margin: 0 auto;text-align:center">
             <time>发布时间：{{detail.newsTime}}</time>
-            <span class="keyword">活动名称：
-              <span v-html="listFilter(detail.ngroupType, 'ngroupType')"></span>
-            </span>
             <br/>
             <time v-if="detail.meetStartTime">开始时间：{{detail.meetStartTime}}</time>
             <time v-if="detail.meetEndTime">结束时间：{{detail.meetEndTime}}</time>
@@ -28,19 +25,12 @@
 <script>
   export default {
     data: () => ({
-      detail: {},
-      ngroupType: [
-        {value: '1', label: '支部委员会'},
-        {value: '2', label: '支部党员大会'},
-        {value: '3', label: '党小组会'},
-        {value: '4', label: '党课'},
-        {value: '5', label: '支部主题党日'},
-        {value: '6', label: '组织生活会'},
-        {value: '7', label: '志愿服务'}
-      ],
+      detail: {
+
+      },
     }),
     created() {
-      this.get()
+      //this.get()
     },
     methods: {
       get() {

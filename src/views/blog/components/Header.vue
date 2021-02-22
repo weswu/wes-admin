@@ -52,21 +52,22 @@ export default {
   data:() => ({
     drawer: null,
     list: [
-      { path: '/blog/index', name: 'Home' },
-      { path: '/blog/about', name: 'About' },
+      { path: '/blog/index', name: '主页' },
+      { path: '/blog/about', name: '关于' },
     ]
   }),
 }
 </script>
 
 <style lang="scss">
-.header-bar{
-  background: linear-gradient( 90deg ,var(--primary-color),#8ed6fb 50%,#d32e9d);
-  height: 2px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-}
+  .header-bar{
+    background: linear-gradient( 90deg ,var(--primary-color),#8ed6fb 50%,#d32e9d);
+    height: 2px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+  }
   #home-app-bar{
     .v-tabs-slider{
       max-width: 24px;
@@ -78,6 +79,4 @@ export default {
       }
     }
   }
-
-
 </style>

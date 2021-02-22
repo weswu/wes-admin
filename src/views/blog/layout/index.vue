@@ -1,5 +1,6 @@
 <template>
   <div class="d-news bg">
+    <Hero/>
     <div class="container">
       <main class="site__content">
         <section>
@@ -23,10 +24,11 @@
 <script>
   import { mapState } from 'vuex'
   import Item from './item'
+  import Hero from '@/views/blog/sections/Hero'
 
   export default {
     components: {
-      Item
+      Item, Hero
     },
     data: () => ({
       total: '',
@@ -38,13 +40,21 @@
         descs: 'id',
         title: '' //关键字
       },
-      list: [],
+      list: [
+        {
+          id: '2',
+          title: 'cccc',
+          newsTime: '2020-2-5',
+          description: 'cccc',
+          photo: ''
+        }
+      ],
     }),
     computed: {
       ...mapState(['party'])
     },
     created() {
-      this.get()
+      //this.get()
     },
     methods: {
       get() {

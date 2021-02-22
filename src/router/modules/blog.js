@@ -16,6 +16,10 @@ const routes = {
       path: 'about',
       component: () => import('@/views/blog/layout/about.vue'),
     },
+    {
+      path: 'detail/:id',
+      component: () => import('@/views/blog/layout/detail.vue'),
+    },
   ],
 }
 

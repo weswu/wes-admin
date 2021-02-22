@@ -1,7 +1,7 @@
 <template>
   <li>
-    <a :href="'./site.html#/news/'+item.id+'?type='+type">
-      <div class="pic" :style="'background-image: url('+(item.thumb || item.photo || '/img/logo.png')+')'"></div>
+    <a :href="'/blog/detail/'+item.id">
+      <div class="pic" :style="'background-image: url('+(item.photo || require('@/assets/home-hero.jpg'))+')'"></div>
       <div class="box">
         <div class="title">
           {{item.title}}
