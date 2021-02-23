@@ -9,16 +9,12 @@ const routes = {
       component: () => import('@/views/blog/layout/index.vue'),
     },
     {
-      path: ':id',
-      component: () => import('@/views/blog/layout/detail.vue'),
+      path: 'article/:id',
+      component: () => import('@/views/blog/layout/article.vue'),
     },
     {
       path: 'about',
       component: () => import('@/views/blog/layout/about.vue'),
-    },
-    {
-      path: 'detail/:id',
-      component: () => import('@/views/blog/layout/detail.vue'),
     },
   ],
 }

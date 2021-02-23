@@ -1,15 +1,8 @@
 <template>
-  <div class="d-news bg">
+  <div>
     <Hero/>
+    <NewsAlt/>
     <div class="container">
-      <main class="site__content">
-        <section>
-          <ul>
-            <Item :item="item" v-for="item,index in list" :key="index" :type="'news'"/>
-            <li v-if="total === 0" style="font-size: 14px;">暂无动态</li>
-          </ul>
-        </section>
-      </main>
       <div class="text-center">
         <v-pagination
           v-model="searchData.current"
@@ -23,12 +16,12 @@
 
 <script>
   import { mapState } from 'vuex'
-  import Item from './item'
   import Hero from '@/views/blog/sections/Hero'
+  import NewsAlt from '@/views/blog/sections/NewsAlt'
 
   export default {
     components: {
-      Item, Hero
+      Hero, NewsAlt
     },
     data: () => ({
       total: '',
@@ -40,15 +33,6 @@
         descs: 'id',
         title: '' //关键字
       },
-      list: [
-        {
-          id: '2',
-          title: 'cccc',
-          newsTime: '2020-2-5',
-          description: 'cccc',
-          photo: ''
-        }
-      ],
     }),
     computed: {
       ...mapState(['party'])
