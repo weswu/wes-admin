@@ -13,11 +13,11 @@ import './utils/compatible-ie';
 import i18n from './i18n';
 import Mock from './mock';
 import vuetify from './plugins/vuetify'
+import './plugins'
 import './plugins/echarts';
 import './components/svg-icons';
 import { parseURL } from './utils/util';
 import VBasicCard from './components/VBasicCard.vue';
-import './plugins'
 
 Vue.component('v-basic-card', VBasicCard);
 

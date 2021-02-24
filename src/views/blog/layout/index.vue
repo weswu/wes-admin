@@ -2,20 +2,10 @@
   <div>
     <Hero/>
     <NewsAlt/>
-    <div class="container">
-      <div class="text-center">
-        <v-pagination
-          v-model="searchData.current"
-          :length="4"
-          circle
-        ></v-pagination>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   import Hero from '@/views/blog/sections/Hero'
   import NewsAlt from '@/views/blog/sections/NewsAlt'
 
@@ -23,38 +13,7 @@
     components: {
       Hero, NewsAlt
     },
-    data: () => ({
-      total: '',
-      searchData: {
-        current: 1,
-        size: 8,
-        status: '2',
-        isShowSub: '1',
-        descs: 'id',
-        title: '' //关键字
-      },
-    }),
-    computed: {
-      ...mapState(['party'])
-    },
-    created() {
-      //this.get()
-    },
-    methods: {
-      get() {
-        this.$http.get('/nfnet/newsbase/page', {params: this.searchData}).then(res => {
-          this.list = res.data.records
-          this.list.forEach((item, i) => {
-            item.newsTime = item.newsTime.slice(0,10)
-          })
-          this.total = res.data.total
-        })
-      },
-      search(val) {
-        this.searchData.title = val
-        this.get()
-      }
-    }
+    metaInfo: { title: 'Latest News' },
   }
 </script>
 

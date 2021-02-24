@@ -52,8 +52,8 @@ export default {
   data:() => ({
     drawer: null,
     list: [
-      { path: '/blog/index', name: '主页' },
-      { path: '/blog/about', name: '关于' },
+      { path: '/blog/index', name: 'Home' },
+      // { path: '/blog/about', name: '关于' },
     ]
   }),
 }

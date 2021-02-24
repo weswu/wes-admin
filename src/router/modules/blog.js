@@ -11,6 +11,7 @@ const routes = {
     {
       path: 'article/:id',
       component: () => import('@/views/blog/layout/article.vue'),
+      meta: { src: require('@/assets/article/article.jpg') },
     },
     {
       path: 'about',

@@ -16,6 +16,12 @@
             class="mb-12"
             v-bind="article"
           />
+          <v-pagination
+            v-model="searchData.current"
+            :length="4"
+            circle
+          ></v-pagination>
+
         </v-col>
 
         <v-col
@@ -48,6 +54,15 @@
     },
 
     data: () => ({
+      total: '',
+      searchData: {
+        current: 1,
+        size: 8,
+        status: '2',
+        isShowSub: '1',
+        descs: 'id',
+        title: '' //关键字
+      },
       articles: [
         {
           icon: 'mdi-image',
@@ -87,5 +102,23 @@
         },
       ],
     }),
+    created() {
+      //this.get()
+    },
+    methods: {
+      get() {
+        this.$http.get('/nfnet/newsbase/page', {params: this.searchData}).then(res => {
+          this.list = res.data.records
+          this.list.forEach((item, i) => {
+            item.newsTime = item.newsTime.slice(0,10)
+          })
+          this.total = res.data.total
+        })
+      },
+      search(val) {
+        this.searchData.title = val
+        this.get()
+      }
+    }
   }
 </script>

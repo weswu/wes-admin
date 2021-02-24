@@ -52,7 +52,9 @@
 
     metaInfo () {
       return {
-        changed: meta => (this.title = meta.titleChunk.toUpperCase()),
+        changed: meta => (
+          this.title = meta.titleChunk.toUpperCase()
+        ),
       }
     },
 
@@ -80,7 +82,7 @@
           { text: this.title },
         ]
       },
-    },
+    }
   }
 </script>
 

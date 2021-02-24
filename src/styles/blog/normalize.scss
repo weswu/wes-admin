@@ -56,16 +56,7 @@ figure {
 }
 
 // *********************  typography.scss
-// General
-body {
-  background-color: $bg-color;
-  font-family: $font-stack;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: $text-color;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-}
+
 
 ::selection {
   color: $bg-color;
@@ -89,21 +80,6 @@ h6 {
 }
 
 //reset link
-a {
-  color: $link-color;
-  text-decoration: none;
-  transition: all .2s linear;
-
-  &:active,
-  &:focus {
-    outline: 0;
-  }
-
-  &:hover,
-  &:focus {
-    color: $primary-light;
-  }
-}
 
 
 em {

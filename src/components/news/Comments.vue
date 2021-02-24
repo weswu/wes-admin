@@ -1,60 +1,45 @@
 <template>
-  <v-list-item
-    :style="styles"
-    class="mb-2 px-0"
+  <base-info-card
+    :title="`Comments(${comments.length})`"
+    class="mb-12"
   >
-    <v-avatar
-      class="mr-6 align-self-start mt-2"
-      color="grey lighten-1"
-      size="96"
-    >
-      <v-img :src="src" />
-    </v-avatar>
-
-    <v-list-item-content>
-      <v-list-item-title
-        class="title text-uppercase mb-2"
-        v-text="name"
-      />
-
-      <v-list-item-subtitle class="mb-3">
-        15th Oct 2015 - 10.45 AM&nbsp;—&nbsp;
-        <a
-          href="#"
-          class="text--primary"
-        >
-          Reply
-        </a>
-      </v-list-item-subtitle>
-
-      <base-body
-        :text="comment"
-        space="4"
-      />
-
-      <v-divider />
-    </v-list-item-content>
-  </v-list-item>
+    <news-comment
+      v-for="(comment, i) in comments"
+      :key="i"
+      v-bind="comment"
+    />
+  </base-info-card>
 </template>
 
 <script>
   export default {
-    name: 'NewsAuthor',
+    name: 'NewsComments',
 
-    props: {
-      comment: String,
-      date: String,
-      name: String,
-      reply: Boolean,
-      src: String,
+    components: {
+      NewsComment: () => import('./Comment'),
     },
 
-    computed: {
-      styles () {
-        return {
-          marginLeft: this.reply ? `${96 + (6 * 4)}px` : undefined,
-        }
-      },
-    },
+    data: () => ({
+      comments: [
+        {
+          name: 'Stacy Porter',
+          comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, magni, pariatur, iste enim esse.',
+          reply: false,
+          src: require('@/assets/user/user-1.jpg'),
+        },
+        {
+          name: 'James Brooker',
+          comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, magni, pariatur, iste enim esse.',
+          reply: true,
+          src: require('@/assets/user/user-2.jpg'),
+        },
+        {
+          name: 'Holly Campbell',
+          comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, magni, pariatur, iste enim esse.',
+          reply: false,
+          src: require('@/assets/user/user-3.jpg'),
+        },
+      ],
+    }),
   }
 </script>
