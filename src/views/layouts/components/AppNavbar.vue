@@ -1,27 +1,27 @@
 <template>
   <header>
-    <v-toolbar
+    <v-app-bar
       class="primary"
       app
       dark
-      flat
+      text
       fixed
       dense
       height="56"
       :clipped-left="true"
     >
-      <v-toolbar-side-icon
+      <v-app-bar-nav-icon
         :disabled="!toggleBtn"
         @click.stop="$emit('toggleSidebar')"
-      ></v-toolbar-side-icon>
-      <v-toolbar-title class="hidden-sm-and-down">
+      ></v-app-bar-nav-icon>
+      <v-app-bar-title class="hidden-sm-and-down">
         <router-link
           :to="{ name : 'Dashboard' }"
           class="toolbar-title"
         >
           <span>VUE-ADMIN-VUETIFY</span>
         </router-link>
-      </v-toolbar-title>
+      </v-app-bar-title>
       <v-spacer></v-spacer>
 
       <!-- menu -->
@@ -40,24 +40,27 @@
           :close-on-content-click="false"
           transition="scale-transition"
         >
-          <v-btn
-            icon
-            flat
-            slot="activator"
-          >
-            <v-badge
-              v-if="badgeLen"
-              color="red"
-              overlap
+        <template v-slot:activator="{ on }">
+            <v-btn
+              icon
+              text
+              v-on="on"
             >
-              <span slot="badge">{{ badgeLen }}</span>
-              <v-icon medium>notifications</v-icon>
-            </v-badge>
-            <v-icon
-              v-else
-              medium
-            >notifications</v-icon>
-          </v-btn>
+              <v-badge
+                v-if="badgeLen"
+                color="red"
+                overlap
+              >
+                <span slot="badge">{{ badgeLen }}</span>
+                <v-icon medium>notifications</v-icon>
+              </v-badge>
+              <v-icon
+                v-else
+                medium
+              >notifications</v-icon>
+            </v-btn>
+        </template>
+
           <notification-list @unreadLen="(val) => badgeLen = val" />
         </v-menu>
         <v-btn
@@ -74,71 +77,77 @@
           left
           nudge-bottom="14"
         >
-          <v-toolbar-title
-            v-if="$vuetify && $vuetify.breakpoint.smAndUp"
-            slot="activator"
-          >
-            <v-avatar size="40">
-              <img
-                :src="user.avatar"
-                alt=""
-              >
-            </v-avatar>
-            <span style="margin-left: 10px;">{{ user.name }}</span>
-            <v-icon>arrow_drop_down</v-icon>
-          </v-toolbar-title>
-          <v-btn
-            v-else
-            icon
-            dark
-            slot="activator"
-          >
-            <v-icon>more_vert</v-icon>
-          </v-btn>
+
+
+          <template v-slot:activator="{ on }" v-if="$vuetify && $vuetify.breakpoint.smAndUp">
+            <v-app-bar-title
+              v-on="on"
+            >
+              <v-avatar size="40">
+                <img
+                  :src="user.avatar"
+                  alt=""
+                >
+              </v-avatar>
+              <span style="margin-left: 10px;">{{ user.name }}</span>
+              <v-icon>arrow_drop_down</v-icon>
+            </v-app-bar-title>
+          </template>
+
+          <template v-slot:activator="{ on }" v-else>
+            <v-btn
+              icon
+              dark
+              v-on="on"
+            >
+              <v-icon>more_vert</v-icon>
+            </v-btn>
+          </template>
+
           <v-list>
-            <v-list-tile class="hidden-sm-and-up">
-              <v-list-tile-title>
+            <v-list-item class="hidden-sm-and-up">
+              <v-list-item-title>
                 <base-langbar />
-              </v-list-tile-title>
-            </v-list-tile>
-            <v-list-tile @click="toGithub">
-              <v-list-tile-avatar>
+              </v-list-item-title>
+            </v-list-item>
+            <v-list-item @click="toGithub">
+              <v-list-item-avatar>
                 <svg-icon
                   style="font-size:21px;"
                   icon-class="github"
                 />
-              </v-list-tile-avatar>
-              <v-list-tile-content>
-                <v-list-tile-title>
+              </v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title>
                   GitHub
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile>
-              <v-list-tile-avatar>
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-avatar>
                 <v-icon>account_circle</v-icon>
-              </v-list-tile-avatar>
-              <v-list-tile-content>
-                <v-list-tile-title>
+              </v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title>
                   {{ $t('common.account') }}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile @click="logout">
-              <v-list-tile-avatar>
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item @click="logout">
+              <v-list-item-avatar>
                 <v-icon>lock_open</v-icon>
-              </v-list-tile-avatar>
-              <v-list-tile-content>
-                <v-list-tile-title>
+              </v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title>
                   {{ $t('common.logout') }}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list>
         </v-menu>
         <base-langbar v-if="$vuetify && $vuetify.breakpoint.smAndUp" />
       </v-toolbar-items>
-    </v-toolbar>
+    </v-app-bar>
   </header>
 </template>
 

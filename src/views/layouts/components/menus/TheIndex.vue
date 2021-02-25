@@ -6,7 +6,7 @@
           v-if="roleShow(route)"
           :key="index"
           :input-value="activeMenu === route.name"
-          flat
+          text
           :to="{ name: route.name }"
         >
           {{ route.name }}
@@ -23,33 +23,33 @@
         >
           <v-btn
             slot="activator"
-            flat
+            text
           >
             {{ route.name }}
             <v-icon dark>arrow_drop_down</v-icon>
           </v-btn>
           <v-list :key="index">
-            <v-list-tile
+            <v-list-item
               v-for="(cRoute, idx) in route.children"
               :to="{ name: cRoute.name }"
               :key="idx"
             >
-              <v-list-tile-action v-if="cRoute.meta && cRoute.meta.icon">
+              <v-list-item-action v-if="cRoute.meta && cRoute.meta.icon">
                 <v-icon>{{ cRoute.meta.icon }}</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>
                   {{ cRoute.name }}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list>
         </v-menu>
       </template>
       <template v-else>
         <v-btn
           v-if="roleShow(route.children[0])"
-          flat
+          text
           :key="index"
           :input-value="activeMenu === getRouteName(route)"
           :to="{ name: getRouteName(route) }"

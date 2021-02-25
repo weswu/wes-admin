@@ -3,7 +3,7 @@
     <div class="right-settings">
       <v-btn
         v-show="!rightDrawer"
-        flat
+        text
         icon
         color="#fff"
         @click="openRightSettings"

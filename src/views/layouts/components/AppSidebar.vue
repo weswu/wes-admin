@@ -20,40 +20,40 @@
             value="true"
             :prepend-icon="route.meta && route.meta.icon"
             :key="index">
-            <v-list-tile
+            <v-list-item
               slot="activator"
               ripple>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ generateTitle(route.name) }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile
+              <v-list-item-content>
+                <v-list-item-title>{{ generateTitle(route.name) }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item
               ripple
               v-for="(cRoute, idx) in route.children"
               :to="{ name: cRoute.name }"
               :key="idx">
-              <v-list-tile-action>
+              <v-list-item-action>
                 <v-icon>{{ cRoute.meta && cRoute.meta.icon }}</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ generateTitle(cRoute.name, route) }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>{{ generateTitle(cRoute.name, route) }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list-group>
         </template>
         <template v-else>
-          <v-list-tile
+          <v-list-item
             v-if="roleShow(route)"
             ripple
             :to="{ name: route.name }"
             :key="index">
-            <v-list-tile-action>
+            <v-list-item-action>
               <v-icon>{{ route.meta && route.meta.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{ generateTitle(route.name) }}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>{{ generateTitle(route.name) }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </template>
       </template>
     </v-list>

@@ -27,24 +27,24 @@
         >
           {{ item.header }}
         </v-subheader>
-        <v-list-tile
+        <v-list-item
           v-else
           avatar
           ripple
           :key="item.title"
           @click="toggle(index)"
         >
-          <v-list-tile-avatar
+          <v-list-item-avatar
             size="38"
             :color="item.color"
           >
             <v-icon dark>{{ item.icon }}</v-icon>
-          </v-list-tile-avatar>
-          <v-list-tile-content>
-            <v-list-tile-sub-title v-html="item.title"></v-list-tile-sub-title>
-          </v-list-tile-content>
-          <v-list-tile-action>
-            <v-list-tile-action-text>{{ item.action }}</v-list-tile-action-text>
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-sub-title v-html="item.title"></v-list-item-sub-title>
+          </v-list-item-content>
+          <v-list-item-action>
+            <v-list-item-action-text>{{ item.action }}</v-list-item-action-text>
             <v-icon
               v-if="!selected.includes(index)"
               color="grey lighten-1"
@@ -57,8 +57,8 @@
             >
               star
             </v-icon>
-          </v-list-tile-action>
-        </v-list-tile>
+          </v-list-item-action>
+        </v-list-item>
         <v-divider
           v-if="index + 1 < items.length"
           :key="index"

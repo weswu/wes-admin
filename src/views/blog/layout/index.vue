@@ -13,7 +13,7 @@
     components: {
       Hero, NewsAlt
     },
-    metaInfo: { title: 'Latest News' },
+    metaInfo: { title: 'News' },
   }
 </script>
 
