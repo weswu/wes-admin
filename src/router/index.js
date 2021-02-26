@@ -43,7 +43,6 @@ export default new Router({
         hidden: true,
       },
     },
-    blog,
     {
       path: '/index',
       name: 'Index',
@@ -70,6 +69,7 @@ export default new Router({
         excel,
       ],
     },
+    blog,
     {
       path: '/admin',
       component: LayoutWithoutSidebar,

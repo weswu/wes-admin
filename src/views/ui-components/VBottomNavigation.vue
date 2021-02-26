@@ -18,7 +18,7 @@
             >
               <v-card-text class="text-xs-center">
                 <v-btn
-                  flat
+                  text
                   color="primary"
                   @click="showNav = !showNav"
                 >
@@ -36,7 +36,7 @@
               >
                 <v-btn
                   color="teal"
-                  flat
+                  text
                   value="recent"
                 >
                   <span>Recent</span>
@@ -44,7 +44,7 @@
                 </v-btn>
                 <v-btn
                   color="teal"
-                  flat
+                  text
                   value="favorites"
                 >
                   <span>Favorites</span>
@@ -52,7 +52,7 @@
                 </v-btn>
                 <v-btn
                   color="teal"
-                  flat
+                  text
                   value="nearby"
                 >
                   <span>Nearby</span>

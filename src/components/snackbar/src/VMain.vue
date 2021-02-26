@@ -18,7 +18,7 @@
       {{ text }}
       <v-btn
         dark
-        flat
+        text
         @click="close"
       >
         Close

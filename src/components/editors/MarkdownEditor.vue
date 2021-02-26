@@ -3,7 +3,7 @@
     <v-flex xs12>
       <span>Based on:</span>
       <v-btn
-        flat
+        text
         href="https://github.com/markedjs/marked"
         target="_blank"
         color="primary"
@@ -13,7 +13,7 @@
       </v-btn>
       and
       <v-btn
-        flat
+        text
         href="https://github.com/highlightjs/highlight.js"
         target="_blank"
         color="primary"

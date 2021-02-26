@@ -3,6 +3,9 @@ const routes = {
   path: '/blog',
   component: Blog,
   redirect: '/blog/index',
+  meta: {
+    hidden: true,
+  },
   children: [
     {
       path: 'index',

@@ -19,13 +19,14 @@
               z-index="1003"
               top
             >
-              <div
-                slot="activator"
-                class="icon-item"
-              >
-                <svg-icon :icon-class="item" />
-                <span>{{ item }}</span>
-              </div>
+              <template v-slot:activator="{ on }">
+                <div
+                  class="icon-item" v-on="on"
+                >
+                  <svg-icon :icon-class="item" />
+                  <span>{{ item }}</span>
+                </div>
+              </template>
               <span>{{ generateCode(item) }}</span>
             </v-tooltip>
           </v-flex>

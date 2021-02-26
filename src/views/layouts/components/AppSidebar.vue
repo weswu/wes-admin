@@ -8,7 +8,7 @@
     v-model="drawer"
     clipped="clipped"
     :temporary="temporary"
-    mobile-break-point="400"
+    mobile-breakpoint="400"
     :mini-variant="miniVariant">
     <v-list
       expand

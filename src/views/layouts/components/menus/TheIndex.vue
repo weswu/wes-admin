@@ -49,7 +49,6 @@
       <template v-else>
         <v-btn
           v-if="roleShow(route.children[0])"
-          text
           :key="index"
           :input-value="activeMenu === getRouteName(route)"
           :to="{ name: getRouteName(route) }"

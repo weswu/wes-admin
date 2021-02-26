@@ -53,14 +53,14 @@
                     required
                   ></v-text-field>
                   <v-layout
-                    column
+                    row-reverse
                     wrap
                     justify-end
                     align-end
                   >
                     <v-flex>
                       <v-btn
-                        flat
+                        class="ma-2"
                         small
                         color="primary"
                         @click="redirectForgotPassword"
