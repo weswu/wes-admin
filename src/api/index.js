@@ -26,6 +26,12 @@ Object.keys(urls).map((url) => {
   return url;
 });
 
+const mongodb = {
+  // user
+  userList: '/api/user/list'
+}
+
+
 export default new function API() {
   // auth
   this.login = params => request.post(authUrls.login, params);
@@ -41,4 +47,7 @@ export default new function API() {
 
   // table
   this.readTablesList = () => request.get(urls.readTablesList, {});
+
+  // user
+  this.userList = params => request.get(mongodb.userList, params);
 }();

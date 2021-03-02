@@ -188,6 +188,19 @@ export default {
     },
   },
   sidebar: {
+    server: {
+      en: 'Server',
+      'zh-CN': '接口',
+    },
+    user: {
+      en: 'User',
+      'zh-CN': '用户',
+    },
+    article: {
+      en: 'Article',
+      'zh-CN': '文章',
+    },
+    // 系统默认
     dashboard: {
       en: 'Dashboard',
       'zh-CN': '首页',

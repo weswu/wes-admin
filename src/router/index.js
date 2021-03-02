@@ -11,6 +11,7 @@ import tables from './modules/tables';
 import charts from './modules/charts';
 import excel from './modules/excel';
 import blog from './modules/blog';
+import server from './modules/server';
 
 Vue.use(Router);
 
@@ -61,6 +62,7 @@ export default new Router({
             icon: 'dashboard',
           },
         },
+        server,
         components,
         widgets,
         uiComponents,
