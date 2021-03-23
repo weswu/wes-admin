@@ -146,27 +146,9 @@ export default {
       editedIndex: -1,
       editedItem: {},
       headers: [
-        {
-          text: '账号',
-          align: 'left',
-          sortable: false,
-          value: 'name',
-        },
-        {
-          text: 'Age',
-          value: 'age',
-          sortable: false,
-        },
-        {
-          text: 'Email',
-          value: 'address',
-          sortable: false,
-        },
-        {
-          text: '操作',
-          value: 'actions',
-          sortable: false,
-        },
+        { text: '账号', value: 'name', align: 'left', sortable: false },
+        { text: 'Email', value: 'email', sortable: false },
+        { text: '操作', value: 'actions', sortable: false },
       ],
       list: [],
       preItem: {},
@@ -194,18 +176,9 @@ export default {
       this.close();
     },
     getListData() {
-      this.$api
-        .userList()
-        .then(res => {
-          const list = res.data.list || [];
-          this.list = list.map((item) => {
-            this.$set(item, 'edit', false);
-            return item;
-          });
-        })
-        .catch((res) => {
-          console.error('getListData', res);
-        });
+      this.$http.get('/api/user/list').then(res => {
+        this.list = res.data.data.list
+      })
     },
     /* eslint-disable no-param-reassign */
     eg2EditItem(item) {

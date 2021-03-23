@@ -2,7 +2,7 @@
   <div class="panel-wrapper">
     <span class="logo">
       <img
-        src="/image/logo.png"
+        src="../../assets/logo.png"
         alt=""
       >
     </span>
@@ -10,7 +10,7 @@
     <div class="slogan-wrapper">
       <div class="slogan">
         <img
-          src="/login-bg2.svg"
+          src="../../assets/login-bg2.svg"
           alt=""
         >
       </div>
@@ -60,21 +60,21 @@
                   >
                     <v-flex>
                       <v-btn
-                        class="ma-2"
-                        small
-                        color="primary"
-                        @click="redirectForgotPassword"
-                      >
-                        {{ $t('common.forgetPassword') }}
-                      </v-btn>
-                    </v-flex>
-                    <v-flex>
-                      <v-btn
                         :loading="loginLoading"
                         @click="login"
                       >
                         <span slot="loader">Loading...</span>
                         {{ $t('common.login') }}
+                      </v-btn>
+                    </v-flex>
+                    <v-flex>
+                      <v-btn
+                        class="ma-2 right"
+                        small
+                        color="primary"
+                        @click="redirectForgotPassword"
+                      >
+                        {{ $t('common.forgetPassword') }}
                       </v-btn>
                     </v-flex>
                   </v-layout>

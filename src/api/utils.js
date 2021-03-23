@@ -22,18 +22,13 @@ service.interceptors.request.use((request) => {
 });
 
 // 响应拦截器
-service.interceptors.response.use(response => response, (error) => {
+service.interceptors.response.use(res => {
+    return res
+  }, (error) => {
   console.log('http error', error);
   return Promise.reject(error.status ? error : error.response);
 });
 
-// service.interceptors.response.use(res => {
-//   debugger
-//   return res
-// }, (error) => {
-//   debugger
-//   return Promise.reject(error)
-// })
 
 function access(url, param, method) {
   param = param || {};

@@ -49,5 +49,5 @@ export default new function API() {
   this.readTablesList = () => request.get(urls.readTablesList, {});
 
   // user
-  this.userList = params => request.get(mongodb.userList, params);
+  this.userList = () => request.get(mongodb.userList, {});
 }();
