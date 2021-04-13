@@ -6,14 +6,14 @@ const users = {
     name: 'visitor',
     email: 'visitor@gmail.com',
     role: 'general',
-    avatar: 'http://67.218.155.2:8082/grassland.jpg',
+    avatar: 'https://himg.bdimg.com/sys/portrait/item/pp.1.ee3b62b9.izo7HigLPJaXQpExRr8j-A.jpg',
     token: 'mock-token-general',
   },
   admin: {
-    name: 'vasttian',
+    name: 'Wes',
     email: 'tianyiming26@gmail.com',
     role: 'admin',
-    avatar: 'http://67.218.155.2:8082/cloud.jpg',
+    avatar: 'https://himg.bdimg.com/sys/portrait/item/pp.1.ee3b62b9.izo7HigLPJaXQpExRr8j-A.jpg',
     token: 'mock-token-admin',
   },
 };

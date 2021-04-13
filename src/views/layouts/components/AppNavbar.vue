@@ -19,7 +19,7 @@
           :to="{ name : 'Dashboard' }"
           class="toolbar-title"
         >
-          <span>VUE-ADMIN-VUETIFY</span>
+          <span>后台管理</span>
         </router-link>
       </v-app-bar-title>
       <v-spacer></v-spacer>
@@ -81,7 +81,7 @@
 
           <template v-slot:activator="{ on }" v-if="$vuetify && $vuetify.breakpoint.smAndUp">
             <v-app-bar-title
-              v-on="on"
+              v-on="on" style="margin-top: 8px;"
             >
               <v-avatar size="40">
                 <img
