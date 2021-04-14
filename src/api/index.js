@@ -3,7 +3,7 @@
 import request from './utils';
 
 const authUrls = {
-  login: '/login',
+  login: '/api/login',
   logout: '/logout',
   readMe: '/users/me',
 };

@@ -35,10 +35,10 @@
                 </h1>
                 <v-form>
                   <v-text-field
-                    v-model="form.username"
+                    v-model="form.email"
                     prepend-icon="person"
                     clearable
-                    :label="$t('common.username')"
+                    :label="$t('common.email')"
                     @keyup.enter.native="login"
                     required
                   ></v-text-field>
@@ -113,7 +113,7 @@ export default {
       currentYear: new Date().getFullYear(),
       showPwd: false,
       form: {
-        username: 'admin',
+        email: 'admin',
         password: 'admin123',
       },
       loginLoading: false,
@@ -126,7 +126,7 @@ export default {
   },
   methods: {
     login() {
-      if (!this.form.password || !this.form.username) {
+      if (!this.form.password || !this.form.email) {
         return;
       }
 

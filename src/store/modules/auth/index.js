@@ -11,6 +11,7 @@ const getters = {};
 const actions = {
   login({ commit, dispatch }, params) {
     return API.login(params).then((value) => {
+      debugger
       commit(types.LOGIN, { value });
       const token = value.data.access_token;
       localStorage.setItem('token', token);

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Axios from 'axios';
-import Snackbar from '../components/snackbar/index';
+//import Snackbar from '../components/snackbar/index';
 
 Vue.prototype.$http = Axios;
 
@@ -77,7 +77,7 @@ function access(url, param, method) {
     }
 
     if (errMsg) {
-      Snackbar.error(errMsg);
+      //Snackbar.error(errMsg);
     }
 
     // Throw it again so you can handle it later.
