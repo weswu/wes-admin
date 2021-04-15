@@ -19,7 +19,7 @@
     <div class="panel-content">
       <v-app class="login-con">
         <!-- <v-spacer></v-spacer> -->
-        <v-content>
+        <v-main>
           <base-langbar />
           <v-container
             fluid
@@ -82,7 +82,7 @@
               </v-flex>
             </v-layout>
           </v-container>
-        </v-content>
+        </v-main>
 
         <v-footer
           color="#fbfbfb"
@@ -113,8 +113,8 @@ export default {
       currentYear: new Date().getFullYear(),
       showPwd: false,
       form: {
-        email: 'admin',
-        password: 'admin123',
+        email: 'foor1@bar.com',
+        password: '123456',
       },
       loginLoading: false,
     };

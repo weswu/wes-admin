@@ -51,16 +51,14 @@ function access(url, param, method) {
   } else {
     ret = service.get(url, { params: { ...param, __randNum } });
   }
-
   return ret.then((res) => {
     // Note:
     // When successful, the body data is returned;
     // when it fails, it returns res,
     // in order to ensure the same as the return value of the http request error.
-    if (res.data.ok) {
+    if (res.data.ok || res.data.code === 0) {
       return res.data;
     }
-
     return Promise.reject(res);
   }, (res) => {
     // FIXME: This is not the best method.

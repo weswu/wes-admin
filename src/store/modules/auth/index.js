@@ -11,13 +11,14 @@ const getters = {};
 const actions = {
   login({ commit, dispatch }, params) {
     return API.login(params).then((value) => {
-      debugger
       commit(types.LOGIN, { value });
       const token = value.data.access_token;
       localStorage.setItem('token', token);
       dispatch('readMe', { token });
       return value;
-    }, res => Promise.reject(res));
+    }, res => {
+      Promise.reject(res)
+    });
   },
   readMe({ commit }, params) {
     return API.readMe(params).then((value) => {

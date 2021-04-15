@@ -5,7 +5,7 @@ import request from './utils';
 const authUrls = {
   login: '/api/login',
   logout: '/logout',
-  readMe: '/users/me',
+  readMe: '/api/user/detail',
 };
 
 const urlPrefix = '/api/common';

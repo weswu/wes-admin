@@ -20,11 +20,13 @@ const users = {
 
 export default {
   login: (params) => {
+    debugger
     const { username } = JSON.parse(params.body);
     const user = users[username];
     return user ? okJsonify({ access_token: users[username].token }) : failJsonify('invalid login or password');
   },
   usersMe: (params) => {
+    debugger
     const { token } = parseURL(params.url).params;
     const temp = token.match(/mock-token-(.*)/);
     const user = temp ? users[token.match(/mock-token-(.*)/)[1]] : '';
